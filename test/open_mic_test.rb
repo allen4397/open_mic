@@ -43,6 +43,6 @@ class OpenMicTest < Minitest::Test
     ali.learn(joke_1)
     refute open_mic.repeated_jokes?
     ali.tell(sal, joke_1)
-    assert open_mic.repeated_jokes
+    assert open_mic.repeated_jokes?
   end
 end
