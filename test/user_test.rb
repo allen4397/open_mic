@@ -13,4 +13,9 @@ class UserTest < Minitest::Test
     user = User.new("Sal")
     assert_equal "Sal", user.name
   end
+
+  def test_it_can_store_jokes
+    user = User.new("Sal")
+    assert_equal [], user.jokes
+  end
 end
