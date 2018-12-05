@@ -34,4 +34,14 @@ class UserTest < Minitest::Test
     sal.tell(ali, joke_1)
     assert_equal joke_1, ali.jokes[0]
   end
+
+  def test_jokes_can_be_accessed_by_id
+    sal = User.new("Sal")
+    joke_1 = Joke.new(1, "Why did the strawberry cross the road?", "Because his mother was in a jam.")
+    joke_2 = Joke.new(2, "How do you keep a lion from charging?", "Take away its credit cards.")
+    ali = User.new("Ali")
+    sal.tell(ali, joke_1)
+    sal.tell(ali, joke_2)
+    assert_equal joke_1, ali.joke_by_id(1)
+  end
 end
